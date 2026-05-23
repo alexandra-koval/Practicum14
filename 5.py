@@ -1,18 +1,20 @@
-name = {}
+tree = {}
 n = int(input())
+
 for i in range(n):
-    parents, kid = input().split()
-    if parents in name:
-        name[parents].append(kid)
+    parent, child = input().split()
+    if parent in tree:
+        tree[parent].append(child)
     else:
-        name[parents] = [kid]
+        tree[parent] = [child]
 
 
-def count(names):
-    if names not in name.keys():
+def count(name):
+    """Return the total number of descendants for a given person."""
+    if name not in tree:
         return 0
-    kids = name.get(names)
-    return len(kids) + sum([count(a) for a in kids])
+    children = tree.get(name)
+    return len(children) + sum([count(child) for child in children])
 
 
 print(count(input()))
