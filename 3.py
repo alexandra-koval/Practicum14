@@ -1,10 +1,13 @@
 n = int(input())
-a = {}
+dictionary = {}
+
 for i in range(n):
     word1, word2 = input().split()
-    a[word1] = word2
+    dictionary[word1] = word2
+
 word = input()
-if word in a:
-    print(a[word])
+
+if word in dictionary:
+    print(dictionary[word])
 else:
     print(word)
