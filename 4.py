@@ -1,13 +1,16 @@
 n = int(input())
-a = {}
+dictionary = {}
+
 for i in range(n):
-    b = input().split()
-    form = b[0]
-    d = []
-    for word in b[1:]:
-        d.append(word)
-    a[form] = d
-word = input()
-for k, v in a.items():
-    if word in v:
-        print(k)
+    line = input().split()
+    form = line[0]
+    items = []
+    for word in line[1:]:
+        items.append(word)
+    dictionary[form] = items
+
+target = input()
+
+for form, items in dictionary.items():
+    if target in items:
+        print(form)
