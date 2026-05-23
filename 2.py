@@ -1,11 +1,14 @@
 n = int(input())
-a = {}
+dictionary = {}
+
 for i in range(n):
     rus, eng = input().split()
-    a[rus] = eng
-s = input().split()
-for word in s:
-    if word in a:
-        print(a[word], end=' ')
+    dictionary[rus] = eng
+
+text = input().split()
+
+for word in text:
+    if word in dictionary:
+        print(dictionary[word], end=' ')
     else:
         print(word, end=' ')
